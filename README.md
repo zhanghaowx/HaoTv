@@ -24,11 +24,10 @@ export ENVATO_API_KEY=<Your Envato API Key>
 export ENVATO_PURCHASE_CODE=<Your Purchase Code for Metronic Theme>
 chmod +x install.sh && ./install.sh
  ```
-4. Follow [How To Set Up Apache Virtual Hosts on Ubuntu 14.04 LTS ](https://www.digitalocean.com/community/tutorials/how-to-set-up-apache-virtual-hosts-on-ubuntu-14-04-lts) to finish websiate setup.
+4. Follow [How To Set Up Apache Virtual Hosts on Ubuntu 14.04 LTS] to finish websiate setup.
 
 ### Environment
 Production environment is built upon DigitalOcean Ubuntu 14.04 LAMP Server
 
-[composer]:http://getcomposer.org/
-[Using Composer with WordPress]:http://roots.io/using-composer-with-wordpress/
-[Jupiter]:http://themeforest.net/item/jupiter-multipurpose-responsive-theme/5177775
+[Metronic]:http://themeforest.net/item/metronic-responsive-admin-dashboard-template/4021469
+[How To Set Up Apache Virtual Hosts on Ubuntu 14.04 LTS]: https://www.digitalocean.com/community/tutorials/how-to-set-up-apache-virtual-hosts-on-ubuntu-14-04-lts
