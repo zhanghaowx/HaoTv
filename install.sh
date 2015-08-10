@@ -13,6 +13,18 @@ if ! type "unzip" &> /dev/null; then
 else
     echo "unzip - found"
 fi
+if ! type "grep" &> /dev/null; then
+    echo "Could not find command grep, please install it first, abort."
+    exit 1
+else
+    grep_version=`grep --version`
+    grep_is_gnu=`echo $grep_version | grep 'GNU'`
+    if [ "$grep_is_gnu" == "" ]; then
+        echo "Found grep, but is not grep (GNU), please install it first, abort."
+        exit 1
+    fi
+    echo "grep - found"
+fi
 
 ##### cleanup environment #####
 if [ -d $THEME_DIR_NAME ]; then
@@ -49,7 +61,13 @@ if [ $? != 0 ]; then
     exit 1
 fi
 
-response_error=`echo $response | python -mjson.tool | grep -Po '(?<="error": ")[^"]*'`
+response_json=`echo $response | python -mjson.tool`
+if [ $? != 0 ]; then
+    echo "Fail to parse response from envota marketplace as JSON, abort."
+    exit 1
+fi
+
+response_error=`echo $response_json | grep -Po '(?<="error": ")[^"]*'`
 if [ "$response_error" != "" ]; then
     echo "Fail to get download URL from envota marketplace, reason: $response_error"
     exit 1
