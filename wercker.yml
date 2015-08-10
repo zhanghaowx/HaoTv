@@ -1,4 +1,7 @@
 box: wercker/default
+build:
+  steps:
+    - jshint
 deploy:
   steps:
     - add-to-known_hosts:
