@@ -3,6 +3,7 @@ logs/*
 theme/*
 download/
 node_modules/*
+app/theme/*
 app/bower_components/*
 tmp
 temp
