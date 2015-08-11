@@ -7,7 +7,7 @@ define(["app"], function (HaoTv) {
     };
 
     HaoTv.Client.prototype = {
-        consstructor: HaoTv.Client
+        constructor: HaoTv.Client
     };
 
     return HaoTv;

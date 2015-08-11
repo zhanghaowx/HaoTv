@@ -38,7 +38,7 @@
 <!-- END HEAD -->
 <!-- BEGIN BODY -->
 
-<body class="page-header-fixed page-quick-sidebar-over-content">
+<body ng-app="HaoTvApp" class="page-header-fixed page-quick-sidebar-over-content">
     <!-- BEGIN HEADER -->
     <div class="page-header navbar-fixed-top">
         <!-- BEGIN HEADER INNER -->
@@ -334,7 +334,13 @@
         <!-- BEGIN CONTENT -->
         <div class="container-fluid container-lf-space page-content">
             <!-- BEGIN WIDGETS -->
-            <div class="row"></div>
+            <div class="row" ng-controller="ChannelController">
+                <ul>
+                    <li ng-repeat="video in channel.videos">
+                        <p>{{video.title}}</p>
+                    </li>
+                </ul>
+            </div>
             <!-- END WIDGETS -->
         </div>
         <!-- END CONTENT -->
@@ -1069,10 +1075,11 @@
             QuickSidebar.init(); // init quick sidebar
             Widgets.init(); // init widgets
         });
-
         requirejs(["client/youtube"], function () {
             var youtube = new HaoTv.Youtube();
-            youtube.getVideo();
+            youtube.getVideo("UCNAOHisAVbp5ANqZDKLKtIw", function (channel) {
+                console.log(channel);
+            });
         });
     </script>
     <!-- END JAVASCRIPTS -->
