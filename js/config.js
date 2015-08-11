@@ -10,9 +10,9 @@ requirejs.config({
         client: 'client',
         video: 'video',
         // Must set 'angular'
-        'angular': 'http://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min',
-        'angular-route': 'http://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular-route.min',
-        'angularAMD': 'http://cdn.jsdelivr.net/angular.amd/0.2.0/angularAMD.min'
+        'angular': '//ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular',
+        'angular-route': '//ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular-route.min',
+        'angularAMD': '//cdn.jsdelivr.net/angular.amd/0.2.0/angularAMD.min'
     },
     //Remember: only use shim config for non-AMD scripts,
     //scripts that do not already call define(). The shim

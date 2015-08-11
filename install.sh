@@ -4,7 +4,7 @@ echo "================="
 echo "Check Environment"
 echo "================="
 
-export THEME_DIR_NAME="Metronic"
+export THEME_DIR_NAME="theme"
 
 ##### check required packages #####
 if ! type "unzip" &> /dev/null; then
@@ -102,6 +102,9 @@ if [ $? != 0 ]; then
     echo "Fail to unzip theme package file $download_file_dir/$download_file_name, abort."
     exit 1
 fi
+
+##### some cleanup #####
+rm -r $download_file_dir
 
 ##### finish install #####
 echo "====================================================================="
