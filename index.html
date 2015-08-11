@@ -2102,12 +2102,19 @@ License: You must have a valid license purchased only from themeforest(the above
     <script src="Metronic/v4.1.0/theme/assets/admin/pages/scripts/tasks.js" type="text/javascript"></script>
     <script src="Metronic/v4.1.0/theme/assets/admin/pages/scripts/widgets.js" type="text/javascript"></script>
     <!-- END PAGE LEVEL SCRIPTS -->
+    <script data-main="js/config.js" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.20/require.js"></script>
+
     <script>
         jQuery(document).ready(function () {
             Metronic.init(); // init metronic core componets
             Layout.init(); // init layout
             QuickSidebar.init(); // init quick sidebar
             Widgets.init(); // init widgets
+        });
+
+        requirejs(["client/youtube"], function () {
+            var youtube = new HaoTv.Youtube();
+            youtube.getVideo();
         });
     </script>
     <!-- END JAVASCRIPTS -->
