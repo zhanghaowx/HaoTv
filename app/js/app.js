@@ -16,6 +16,7 @@ define([
     // Declare app level module which depends on views, and components
     return angular.module('HaoTv', [
             'ngRoute',
+            'HaoTv.version',
             'HaoTv.dashboard'
         ])
         .config(['$routeProvider', function ($routeProvider) {

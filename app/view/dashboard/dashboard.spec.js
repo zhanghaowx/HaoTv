@@ -6,9 +6,11 @@ define(['app', 'angularMocks'], function (app) {
         beforeEach(module('HaoTv.dashboard'));
 
         describe('dashboard controller', function () {
-            it('should ....', inject(function ($controller) {
+            it('should exist', inject(function ($controller) {
                 //spec body
-                var view1Ctrl = $controller('DashboardController');
+                var DashboardController = $controller('DashboardController', {
+                    $scope: {}
+                });
                 expect(DashboardController).toBeDefined();
             }));
         });

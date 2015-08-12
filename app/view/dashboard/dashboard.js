@@ -2,10 +2,11 @@
 define([
     'angular',
     'angularRoute',
-    'client/youtube'
+    'client/youtube',
+    'components/version/version'
 ], function (angular, angularRoute, HaoTv) {
     angular
-        .module('HaoTv.dashboard', ['ngRoute'])
+        .module('HaoTv.dashboard', ['ngRoute', 'HaoTv.version'])
         .config(['$routeProvider', function ($routeProvider) {
             $routeProvider.when('/dashboard', {
                 templateUrl: 'view/dashboard/dashboard.html',
