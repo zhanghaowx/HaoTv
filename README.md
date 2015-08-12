@@ -1,4 +1,4 @@
-# HaoTv
+# HaoTv [![wercker status](https://app.wercker.com/status/a21ebedfad0c675440adf27e1131bd88/s "wercker status")](https://app.wercker.com/project/bykey/a21ebedfad0c675440adf27e1131bd88)
 Build a website using AngularJs for collecting online TV/Movie resources.
 
 ### Metronic
