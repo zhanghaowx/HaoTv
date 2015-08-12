@@ -3,7 +3,7 @@
 
 define(['app', 'angularMocks'], function (app) {
     describe('HaoTv.dashboard module', function () {
-        beforeEach(module('myApp.view1'));
+        beforeEach(module('HaoTv.dashboard'));
 
         describe('dashboard controller', function () {
             it('should ....', inject(function ($controller) {

@@ -13,6 +13,7 @@ if ! type "unzip" &> /dev/null; then
 else
     echo "unzip - found"
 fi
+###################################
 if ! type "grep" &> /dev/null; then
     echo "Could not find command grep, please install it first, abort."
     exit 1
@@ -24,6 +25,13 @@ else
         exit 1
     fi
     echo "grep - found"
+fi
+###################################
+if ! type "npm" &> /dev/null; then
+    echo "Could not find command npm, please install it first, abort."
+    exit 1
+else
+    echo "npm - found"
 fi
 
 ##### cleanup environment #####
@@ -105,6 +113,9 @@ fi
 
 ##### some cleanup #####
 rm -r $download_file_dir
+
+#### initilize ####
+npm install
 
 ##### finish install #####
 echo "====================================================================="

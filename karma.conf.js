@@ -18,15 +18,15 @@ module.exports = function (config) {
                 included: false
             },
             {
-                pattern: 'app/components/**/*.js',
+                pattern: 'app/js/components/**/*.js',
                 included: false
             },
             {
-                pattern: 'app/view*/**/*.js',
+                pattern: 'app/view/**/*.js',
                 included: false
             },
             {
-                pattern: 'app/js/app.js',
+                pattern: 'app/**/*.js',
                 included: false
             },
             // needs to be last http://karma-runner.github.io/0.12/plus/requirejs.html

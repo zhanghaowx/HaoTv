@@ -1,7 +1,7 @@
 {
     "name": "HaoTv",
     "description": "A webapp for collection online video resources.",
-    "version": "0.1.0",
+    "version": "0.3.0",
     "homepage": "https://github.com/zhanghaowx/HaoTv",
     "license": "MIT",
     "private": false,
