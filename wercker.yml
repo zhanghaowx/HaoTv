@@ -1,15 +1,6 @@
 box: nodesource/trusty
 build:
   steps:
-    - install-packages:
-        packages: unzip wget
-    - script:
-        name: install theme
-        code: |
-          ## export credentails
-          export ENVATO_USERNAME=$ENVATO_USERNAME && export ENVATO_API_KEY=$ENVATO_API_KEY && export ENVATO_PURCHASE_CODE=$ENVATO_PURCHASE_CODE
-          ## install theme
-          cd app && chmod +x install.sh && ./install.sh
     - npm-install
     - npm-test
 deploy:
