@@ -1,12 +1,9 @@
 'use strict';
 define([
     'angular',
-    'angularRoute'
-], function (angular) {
-
-
-
-
+    'angularRoute',
+    'client/youtube'
+], function (angular, angularRoute, HaoTv) {
     angular
         .module('HaoTv.dashboard', ['ngRoute'])
         .config(['$routeProvider', function ($routeProvider) {
@@ -15,16 +12,10 @@ define([
                 controller: 'DashboardController'
             });
         }])
-        .controller('DashboardController', ['$scope', function ($scope) {
-            $scope.channel = {
-                videos: [
-                    {
-                        title: "video 1"
-                    },
-                    {
-                        title: "video 2"
-                    }
-                ]
-            };
+        .controller('DashboardController', ['$scope', '$http', function ($scope, $http) {
+            var youtube = new HaoTv.Youtube($http);
+            youtube.getVideo("UCNAOHisAVbp5ANqZDKLKtIw").then(function (response) {
+                $scope.channel = youtube.parseResponse(response.data);
+            });
         }]);
 });

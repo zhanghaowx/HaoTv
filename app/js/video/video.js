@@ -1,4 +1,4 @@
-define(["app"], function (HaoTv) {
+define(["core/core"], function (HaoTv) {
     /**
      * A video
      */

@@ -6,7 +6,7 @@ define(["video/video"], function (HaoTv) {
         // Id of the channel
         this.id = "";
         // A list of videos
-        this.items = [
+        this.videos = [
         ];
     };
 
