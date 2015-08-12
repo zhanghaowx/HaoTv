@@ -10,5 +10,6 @@ app/theme/*
 app/bower_components/*
 tmp
 temp
+_*
 .idea
 .DS_Store
