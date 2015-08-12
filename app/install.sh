@@ -14,6 +14,13 @@ else
     echo "unzip - found"
 fi
 ###################################
+if ! type "wget" &> /dev/null; then
+    echo "Could not find command wget, please install it first, abort."
+    exit 1
+else
+    echo "wget - found"
+fi
+###################################
 if ! type "grep" &> /dev/null; then
     echo "Could not find command grep, please install it first, abort."
     exit 1

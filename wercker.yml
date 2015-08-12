@@ -2,7 +2,7 @@ box: nodesource/trusty
 build:
   steps:
     - install-packages:
-        packages: unzip
+        packages: unzip wget
     - script:
         name: install theme
         code: |
