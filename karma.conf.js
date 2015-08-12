@@ -22,19 +22,20 @@ module.exports = function (config) {
                 included: false
             },
             {
-                pattern: 'app/view/**/*.js',
+                pattern: 'app/js/**/!(require-config).js',
                 included: false
             },
             {
-                pattern: 'app/**/*.js',
+                pattern: 'app/view/**/*.js',
                 included: false
             },
             // needs to be last http://karma-runner.github.io/0.12/plus/requirejs.html
             'app/js/require-config.js'
         ],
         autoWatch: true,
-        frameworks: ['jasmine', 'requirejs'],
         browsers: ['Chrome'],
+        logLevel: config.LOG_DEBUG,
+        frameworks: ['jasmine', 'requirejs'],
         plugins: [
             'karma-chrome-launcher',
             'karma-firefox-launcher',

@@ -12,16 +12,15 @@ define([
     'angular',
     'angularRoute',
     'view/dashboard/dashboard'
-], function (angular, angularRoute) {
+], function (angular, angularRoute, dashboardView) {
     // Declare app level module which depends on views, and components
-    var appModule = angular.module('HaoTv', [
-        'ngRoute',
-        'HaoTv.dashboard'
-    ]).config(['$routeProvider', function ($routeProvider) {
-        $routeProvider.otherwise({
-            redirectTo: '/dashboard'
-        });
+    return angular.module('HaoTv', [
+            'ngRoute',
+            'HaoTv.dashboard'
+        ])
+        .config(['$routeProvider', function ($routeProvider) {
+            $routeProvider.otherwise({
+                redirectTo: '/dashboard'
+            });
     }]);
-
-    return appModule;
 });

@@ -1,4 +1,7 @@
-# downloaded files #
+## Don't ignore
+!.gitkeep
+
+## Ignore
 logs/*
 theme/*
 download/
@@ -7,6 +10,5 @@ app/theme/*
 app/bower_components/*
 tmp
 temp
-!.gitkeep
-.DS_Store
 .idea
+.DS_Store
