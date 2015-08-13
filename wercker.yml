@@ -2,7 +2,7 @@ box: emmenko/nodejs-karma
 build:
   steps:
 #    - install-packages:
-#        packages: unzip wget chromium-browser
+#        packages: unzip wget
 #    - script:
 #        name: install theme
 #        code: |
@@ -11,10 +11,12 @@ build:
 #          ## install theme
 #          cd app && chmod +x install.sh && ./install.sh
     - npm-install
-#    - script:
-#        name: install karma-cli
-#        code: |
-#          npm install -g karma-cli
+    - script:
+        name: setup Chrome for unit test
+        code: |
+          ## set Chrome to use fake X from xvfbc
+          test -e /tmp/.X99-lock || sudo /usr/bin/Xvfb :99 &
+          export DISPLAY=:99.0
     - npm-test
 deploy:
   steps:

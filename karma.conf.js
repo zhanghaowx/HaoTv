@@ -33,7 +33,14 @@ module.exports = function (config) {
             'app/js/require-config.js'
         ],
         autoWatch: true,
-        browsers: ['Chrome'],
+        singleRun: true,
+        browsers: ['Chrome_no_sandbox'],
+        customLaunchers: {
+            Chrome_no_sandbox: {
+                base: 'Chrome',
+                flags: ['--no-sandbox']
+            }
+        },
         logLevel: config.LOG_DEBUG,
         frameworks: ['jasmine', 'requirejs'],
         plugins: [
