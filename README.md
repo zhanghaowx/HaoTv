@@ -27,7 +27,9 @@ npm protractor
 ```
 
 ### Deploy
-Deploy to Digital Ocean
+
+**Manually** deploy to Digital Ocean
+
 1. Login your account and create a new droplet.
  * Under "Select Image", choose "Applications -> LAMP on 14.04", or similar options if not available.
 
@@ -47,9 +49,14 @@ chmod +x install.sh && ./install.sh
  ```
 4. Follow [How To Set Up Apache Virtual Hosts on Ubuntu 14.04 LTS] to finish websiate setup.
 
+**Automatically** deployment by [wercker]
+
+1. Choose one successful build, select *Deploy to -> Deploy Target*
+
 ### Environment
 Production environment is built upon DigitalOcean Ubuntu 14.04 LAMP Server
 
+[wercker]:https://app.wercker.com/#applications/55c81b587ed0b2ec760611e0
 [Bracket]:http://brackets.io
 [Metronic]:http://themeforest.net/item/metronic-responsive-admin-dashboard-template/4021469
 [How To Set Up Apache Virtual Hosts on Ubuntu 14.04 LTS]: https://www.digitalocean.com/community/tutorials/how-to-set-up-apache-virtual-hosts-on-ubuntu-14-04-lts
