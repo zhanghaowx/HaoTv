@@ -1,7 +1,11 @@
-box: nodesource/trusty
+box: emmenko/wercker-nodejs-karma
 build:
   steps:
     - npm-install
+    - script:
+        name: install karma-cli
+        code: |
+          npm install -g karma-cli
     - npm-test
 deploy:
   steps:
