@@ -11,17 +11,19 @@ build:
 #          ## install theme
 #          cd app && chmod +x install.sh && ./install.sh
     - script:
-        name: setup directory permission for npm
+        name: npm install
         code: |
-          chown -R $USER:$USER ~/.npm
-    - npm-install
+          npm install --unsafe-perm
     - script:
         name: setup Chrome for unit test
         code: |
           ## set Chrome to use fake X from xvfbc
           test -e /tmp/.X99-lock || sudo /usr/bin/Xvfb :99 &
           export DISPLAY=:99.0
-    - npm-test
+    - script:
+        name: npm test
+        code: |
+          npm run test-single-run
 deploy:
   steps:
     - add-to-known_hosts:

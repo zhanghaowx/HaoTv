@@ -33,7 +33,6 @@ module.exports = function (config) {
             'app/js/require-config.js'
         ],
         autoWatch: true,
-        singleRun: true,
         browsers: ['Chrome_no_sandbox'],
         customLaunchers: {
             Chrome_no_sandbox: {

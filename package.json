@@ -20,7 +20,7 @@
         "shelljs": "^0.2.6"
     },
     "scripts": {
-        "postinstall": "bower install",
+        "postinstall": "bower install --allow-root",
         "prestart": "npm install",
         "start": "http-server -a localhost -p 8000 -c-1 app",
         "pretest": "npm install",
