@@ -10,6 +10,10 @@ build:
 #          export ENVATO_USERNAME=$ENVATO_USERNAME && export ENVATO_API_KEY=$ENVATO_API_KEY && export ENVATO_PURCHASE_CODE=$ENVATO_PURCHASE_CODE
 #          ## install theme
 #          cd app && chmod +x install.sh && ./install.sh
+    - script:
+        name: setup directory permission for npm
+        code: |
+          chown -R $USER:$USER ~/.npm
     - npm-install
     - script:
         name: setup Chrome for unit test
