@@ -1,6 +1,15 @@
-box: emmenko/wercker-nodejs-karma
+box: nodesource/trusty
 build:
   steps:
+    - install-packages:
+        packages: unzip wget chromium-browser
+#    - script:
+#        name: install theme
+#        code: |
+#          ## export credentails
+#          export ENVATO_USERNAME=$ENVATO_USERNAME && export ENVATO_API_KEY=$ENVATO_API_KEY && export ENVATO_PURCHASE_CODE=$ENVATO_PURCHASE_CODE
+#          ## install theme
+#          cd app && chmod +x install.sh && ./install.sh
     - npm-install
     - script:
         name: install karma-cli
