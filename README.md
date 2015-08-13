@@ -1,12 +1,33 @@
 # HaoTv [![wercker status](https://app.wercker.com/status/a21ebedfad0c675440adf27e1131bd88/s "wercker status")](https://app.wercker.com/project/bykey/a21ebedfad0c675440adf27e1131bd88)
 Build a website using AngularJs for collecting online TV/Movie resources.
 
-### Metronic
+### Theme
 [Metronic] is used as the base theme of the website
 ![Metronic Preview](http://keenthemes.com/assets/img/itempage/banner_newupdate.jpg)
 
+### IDE
+[Bracket] by Adobe is recommended. Here is a list of plugins I use:
+* Beautify
+* Brackets Icons
+* Extract for Brackets (Preview)
+* File Tree Exclude
+* Markdown Preview
+* Reasonable Comments
+* Standard Code Style
+* Whitespace Normalizer
+
+### Unit Test and Integration Test
+```
+## run karma test and watch for file changes
+npm test
+## single run of all unit test
+npm run test-singe-run
+## run integration test
+npm protractor
+```
+
 ### Deploy
-#### Deploy to Digital Ocean
+Deploy to Digital Ocean
 1. Login your account and create a new droplet.
  * Under "Select Image", choose "Applications -> LAMP on 14.04", or similar options if not available.
 
@@ -29,5 +50,6 @@ chmod +x install.sh && ./install.sh
 ### Environment
 Production environment is built upon DigitalOcean Ubuntu 14.04 LAMP Server
 
+[Bracket]:http://brackets.io
 [Metronic]:http://themeforest.net/item/metronic-responsive-admin-dashboard-template/4021469
 [How To Set Up Apache Virtual Hosts on Ubuntu 14.04 LTS]: https://www.digitalocean.com/community/tutorials/how-to-set-up-apache-virtual-hosts-on-ubuntu-14-04-lts
