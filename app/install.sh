@@ -101,7 +101,7 @@ fi
 download_file_name="metronic.zip"
 
 echo "Downloading theme package from $response_url ... into direcotry $download_file_dir"
-wget $response_url -O $download_file_dir/$download_file_name
+wget $response_url -O $download_file_dir/$download_file_name -q
 if [ $? != 0 ]; then
     echo "Fail to download theme package from envota marketplace, abort."
     exit 1
@@ -112,7 +112,7 @@ echo "Install Themes"
 echo "=============="
 
 echo "Extract theme content from package file ... "
-unzip $download_file_dir/$download_file_name -d $THEME_DIR_NAME
+unzip $download_file_dir/$download_file_name -d $THEME_DIR_NAME -q
 if [ $? != 0 ]; then
     echo "Fail to unzip theme package file $download_file_dir/$download_file_name, abort."
     exit 1
@@ -122,7 +122,11 @@ fi
 rm -r $download_file_dir
 
 #### initilize ####
-npm install
+npm install --unsafe-perm
+if [ $? != 0 ]; then
+    echo "Fail to run 'npm install', abort."
+    exit 1
+fi
 
 ##### finish install #####
 echo "====================================================================="
