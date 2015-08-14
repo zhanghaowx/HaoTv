@@ -26,8 +26,6 @@ build:
           npm run test-single-run
 deploy:
   steps:
-    - add-to-known_hosts:
-        hostname: tv.xiao.wedding
     - mktemp:
         envvar: PRIVATEKEY_PATH
     - create-file:
@@ -36,9 +34,13 @@ deploy:
         content: $DIGITAL_OCEAN_KEYPAIR_PRIVATE
         overwrite: true
         hide-from-log: true
+    - add-to-known_hosts:
+        hostname: tv.xiao.wedding
+        local: true
     - script:
         name: deploy website
         code: |
+          export HOSTNAME="tv.xiao.wedding"
           export SSH_TO_INSTANCE_AND_RUN="ssh -i $PRIVATEKEY_PATH -l root -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no tv.xiao.wedding"
           export EXPORT_ENVATO_CREDENTIALS="export ENVATO_USERNAME=$ENVATO_USERNAME && export ENVATO_API_KEY=$ENVATO_API_KEY && export ENVATO_PURCHASE_CODE=$ENVATO_PURCHASE_CODE"
           export UPDATE_AND_INSTALL_APP="cd /var/www/HaoTv && git pull && cd app && chmod +x install.sh && ./install.sh"
