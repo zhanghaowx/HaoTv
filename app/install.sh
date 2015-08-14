@@ -4,7 +4,9 @@ echo "================="
 echo "Check Environment"
 echo "================="
 
-export THEME_DIR_NAME="theme"
+theme_dir_name="theme"
+download_file_dir="download"
+download_file_name="metronic.zip"
 
 ##### check required packages #####
 if ! type "unzip" &> /dev/null; then
@@ -42,10 +44,10 @@ else
 fi
 
 ##### cleanup environment #####
-if [ -d $THEME_DIR_NAME ]; then
-    echo "Removing old install of Metronic theme ... "
-    rm -r $THEME_DIR_NAME
-    mkdir $THEME_DIR_NAME
+if [ -d $theme_dir_name ]; then
+    echo "Removing old installation of Metronic theme ... "
+    rm -r $theme_dir_name
+    mkdir $theme_dir_name
 fi
 
 echo "==============="
@@ -90,15 +92,11 @@ fi
 
 response_url=`echo $response | python -mjson.tool | grep -Po '(?<="download_url": ")[^"]*'`
 
-download_file_dir="download"
-
 if [ ! -d "$download_file_dir" ]; then
     mkdir $download_file_dir
 else
     rm -r $download_file_dir/*
 fi
-
-download_file_name="metronic.zip"
 
 echo "Downloading theme package from $response_url ... into direcotry $download_file_dir"
 wget $response_url -O $download_file_dir/$download_file_name -q
@@ -112,9 +110,9 @@ echo "Install Themes"
 echo "=============="
 
 echo "Extract theme content from package file ... "
-unzip $download_file_dir/$download_file_name -d $THEME_DIR_NAME -q
+unzip -q $download_file_dir/$download_file_name -d $theme_dir_name
 if [ $? != 0 ]; then
-    echo "Fail to unzip theme package file $download_file_dir/$download_file_name, abort."
+    echo "Fail to unzip theme package file $download_file_dir/$download_file_name into $theme_dir_name, abort."
     exit 1
 fi
 
