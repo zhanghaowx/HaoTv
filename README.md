@@ -1,4 +1,7 @@
-# HaoTv [![wercker status](https://app.wercker.com/status/a21ebedfad0c675440adf27e1131bd88/s "wercker status")](https://app.wercker.com/project/bykey/a21ebedfad0c675440adf27e1131bd88)
+# HaoTv
+[![wercker status](https://app.wercker.com/status/a21ebedfad0c675440adf27e1131bd88/s "wercker status")](https://app.wercker.com/project/bykey/a21ebedfad0c675440adf27e1131bd88)
+[![Coverage Status](https://coveralls.io/repos/zhanghaowx/HaoTv/badge.svg?branch=master&service=github)](https://coveralls.io/github/zhanghaowx/HaoTv?branch=master)
+
 Build a website using AngularJs for collecting online TV/Movie resources.
 
 ### Theme
