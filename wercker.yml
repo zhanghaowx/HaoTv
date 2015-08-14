@@ -34,9 +34,6 @@ deploy:
         content: $DIGITAL_OCEAN_KEYPAIR_PRIVATE
         overwrite: true
         hide-from-log: true
-    - add-to-known_hosts:
-        hostname: tv.xiao.wedding
-        local: true
     - script:
         name: deploy website
         code: |
