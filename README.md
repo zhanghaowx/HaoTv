@@ -20,12 +20,17 @@ Build a website using AngularJs for collecting online TV/Movie resources.
 * Whitespace Normalizer
 
 ### Unit Test and Integration Test
+##### run karma test and watch for file changes
 ```
-## run karma test and watch for file changes
 npm test
-## single run of all unit test
+```
+##### single run of all unit test
+```
 npm run test-single-run
-## run integration test
+```
+##### run integration test
+```
+npm start
 npm run protractor
 ```
 
