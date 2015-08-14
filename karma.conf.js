@@ -43,15 +43,22 @@ module.exports = function (config) {
         logLevel: config.LOG_DEBUG,
         frameworks: ['jasmine', 'requirejs'],
         plugins: [
-            'karma-chrome-launcher',
-            'karma-firefox-launcher',
+            'karma-coveralls',
             'karma-jasmine',
+            'karma-coverage',
             'karma-requirejs',
-            'karma-junit-reporter'
+            'karma-junit-reporter',
+            'karma-chrome-launcher',
+            'karma-firefox-launcher'
         ],
-        junitReporter: {
-            outputFile: 'test_out/unit.xml',
-            suite: 'unit'
+        preprocessors: {
+            'app/js/**/*.js': ['coverage'],
+            'app/view/**/*.js': ['coverage']
+        },
+        reporters: ['coverage', 'coveralls'],
+        coverageReporter: {
+            type: 'lcov',
+            dir: 'coverage/'
         }
     });
 };

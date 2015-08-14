@@ -21,9 +21,9 @@ Build a website using AngularJs for collecting online TV/Movie resources.
 ## run karma test and watch for file changes
 npm test
 ## single run of all unit test
-npm run test-singe-run
+npm run test-single-run
 ## run integration test
-npm protractor
+npm run protractor
 ```
 
 ### Deploy
