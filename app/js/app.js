@@ -1,3 +1,5 @@
+'use strict';
+
 // Add format function to String
 if (!String.prototype.format) {
     String.prototype.format = function () {
@@ -14,14 +16,21 @@ define([
     'view/dashboard/dashboard'
 ], function (angular, angularRoute, dashboardView) {
     // Declare app level module which depends on views, and components
-    return angular.module('HaoTv', [
+    var app = angular.module('HaoTv', [
             'ngRoute',
             'HaoTv.version',
             'HaoTv.dashboard'
-        ])
-        .config(['$routeProvider', function ($routeProvider) {
-            $routeProvider.otherwise({
-                redirectTo: '/dashboard'
-            });
+        ]);
+    app.config(['$routeProvider', function ($routeProvider) {
+        $routeProvider.otherwise({
+            redirectTo: '/dashboard'
+        });
     }]);
+    // UI components: Header, Footer, Sidebar, ... , etc.
+    app.controller('HeaderController', ['$scope', function ($scope) {
+        $scope.$on('$includeContentLoaded', function () {
+            Layout.init(); // init header
+        });
+    }]);
+    return app;
 });
