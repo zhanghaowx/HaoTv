@@ -20,20 +20,34 @@ if (window.__karma__) {
 
 require.config({
     paths: {
-        view: '../view',
-        text: '../bower_components/requirejs-text/text',
         angular: '../bower_components/angular/angular',
         angularRoute: '../bower_components/angular-route/angular-route',
-        angularMocks: '../bower_components/angular-mocks/angular-mocks'
+        angularMocks: '../bower_components/angular-mocks/angular-mocks',
+        bootstrap: '../bower_components/bootstrap/dist/js/bootstrap',
+        jquery: '../bower_components/jquery/dist/jquery',
+        jquery: '../bower_components/jquery-ui/jquery-ui',
+        text: '../bower_components/requirejs-text/text',
+        view: '../view'
     },
     shim: {
         'angular': {
-            'exports': 'angular'
+            exports: 'angular'
         },
         'angularRoute': ['angular'],
         'angularMocks': {
             deps: ['angular'],
-            'exports': 'angular.mock'
+            exports: 'angular.mock'
+        },
+        'bootstrap': {
+            deps: ['jquery-ui'],
+            exports: 'bootstrap'
+        },
+        'jquery': {
+            exports: 'jquery'
+        },
+        'jquery-ui': {
+            deps: ['jquery'],
+            exports: 'jquery-ui'
         }
     },
     priority: ["angular"],

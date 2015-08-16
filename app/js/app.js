@@ -13,13 +13,22 @@ if (!String.prototype.format) {
 define([
     'angular',
     'angularRoute',
-    'view/dashboard/dashboard'
+    'components/version/version',
+    'view/dashboard/dashboard',
+    'view/login/login'
 ], function (angular, angularRoute, dashboardView) {
-    // Declare app level module which depends on views, and components
+    /**
+     * Declare app level module which depends on views, and components
+     * - Steps to add a new page:
+     * 1. add page's js file to above dependency list
+     * 2. add page's module name to below dependency list
+     * 3. In page's js file, configure $routeProvider
+     */
     var app = angular.module('HaoTv', [
             'ngRoute',
             'HaoTv.version',
-            'HaoTv.dashboard'
+            'HaoTv.dashboard',
+            'HaoTv.login'
         ]);
     app.config(['$routeProvider', function ($routeProvider) {
         $routeProvider.otherwise({
