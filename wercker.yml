@@ -23,7 +23,6 @@ build:
     - script:
         name: npm test
         code: |
-          export NODE_ENV=test
           npm run test-single-run
 deploy:
   steps:
@@ -43,5 +42,5 @@ deploy:
           export HOSTNAME="tv.xiao.wedding"
           export SSH_TO_INSTANCE_AND_RUN="ssh -i $PRIVATEKEY_PATH -l root -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no tv.xiao.wedding"
           export EXPORT_ENVATO_CREDENTIALS="export ENVATO_USERNAME=$ENVATO_USERNAME && export ENVATO_API_KEY=$ENVATO_API_KEY && export ENVATO_PURCHASE_CODE=$ENVATO_PURCHASE_CODE"
-          export UPDATE_AND_INSTALL_APP="export NODE_ENV=production && cd /var/www/HaoTv && git pull && cd app && chmod +x install.sh && ./install.sh"
+          export UPDATE_AND_INSTALL_APP="cd /var/www/HaoTv && git pull && cd app && chmod +x install.sh && ./install.sh"
           $SSH_TO_INSTANCE_AND_RUN "$EXPORT_ENVATO_CREDENTIALS && $UPDATE_AND_INSTALL_APP"
