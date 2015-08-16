@@ -55,7 +55,7 @@ module.exports = function (config) {
             'app/js/**/*.js': ['coverage'],
             'app/view/**/*.js': ['coverage']
         },
-        reporters: ['coverage', 'coveralls'],
+        reporters: ['progress', 'coverage', 'coveralls'],
         coverageReporter: {
             type: 'lcov',
             dir: 'coverage/'

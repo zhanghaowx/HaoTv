@@ -4,7 +4,8 @@
 ## Ignore
 logs/*
 theme/*
-download/
+coverage/*
+download/*
 node_modules/*
 app/theme/*
 app/bower_components/*
