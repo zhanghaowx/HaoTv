@@ -1,8 +1,8 @@
 box: emmenko/nodejs-karma
 build:
   steps:
-    - install-packages:
-        packages: git unzip wget
+#    - install-packages:
+#        packages: unzip wget
 #    - script:
 #        name: install theme
 #        code: |

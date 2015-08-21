@@ -13,6 +13,8 @@
     <meta content="Websites for your selected online tv series, movies and so on" name="description" />
     <meta content="Hao Zhang" name="author" />
 
+    <link rel="shortcut icon" href="favicon.ico" />
+
     <!-- BEGIN GLOBAL MANDATORY STYLES -->
     <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all" rel="stylesheet" type="text/css" />
     <link href="theme/v4.1.0/theme/assets/global/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
@@ -29,7 +31,9 @@
     <link href="theme/v4.1.0/theme/assets/admin/layout7/css/custom.css" rel="stylesheet" type="text/css" />
     <!-- END THEME STYLES -->
 
-    <link rel="shortcut icon" href="favicon.ico" />
+    <!-- BEGIN CUSTOM THEME STYLES -->
+    <link href="css/custom.css" rel="stylesheet" type="text/css" />
+    <!-- END CUSTOM THEME STYLES -->
 
     <title>{{ title }}</title>
 </head>
@@ -47,13 +51,7 @@
 
     <!-- BEGIN CONTAINER -->
     <div class="page-container page-container-bg-solid">
-        <!-- BEGIN CONTENT -->
-        <div class="container-fluid container-lf-space page-content">
-            <!-- BEGIN WIDGETS -->
-            <div ui-view="content"></div>
-            <!-- END WIDGETS -->
-        </div>
-        <!-- END CONTENT -->
+        <div ui-view="content"></div>
 
         <!-- BEGIN QUICK SIDEBAR TOGGLER -->
         <button type="button" class="quick-sidebar-toggler" data-toggle="collapse">

@@ -1,0 +1,14 @@
+/**
+ * Most CSS is defined by Metronic, but sometimes we want to override it
+ */
+
+
+/**
+ * Force a page to be full screen
+ */
+
+.fullscreen {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
