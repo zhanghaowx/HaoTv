@@ -11,60 +11,35 @@ if (!String.prototype.format) {
 }
 
 define([
-    'parse',
     'angular',
-    'angularRoute',
+    'angularUiRoute',
+    'parse',
     'components/version/version',
     'view/dashboard/dashboard',
     'view/login/login'
-], function (angular, angularRoute, dashboardView) {
+], function (angular) {
 
     Parse.initialize("LOYwfCogZm31uTz2PqLf4Chn4aBTNwBLfdsXWcdz", "KAthIVo7eU6VwPuhGKPZFbCwwxcA2tbY7v649YTn");
-    var TestObject = Parse.Object.extend("TestObject");
-    var testObject = new TestObject();
-    testObject.save({
-        foo: "bar"
-    }).then(function (object) {
-        alert("yay! it worked");
-    });
+
     /**
      * Declare app level module which depends on views, and components
      * - Steps to add a new page:
      * 1. add page's js file to above dependency list
      * 2. add page's module name to below dependency list
-     * 3. In page's js file, configure $routeProvider
+     * 3. In page's js file, configure $stateProvider
      */
     var app = angular.module('HaoTv', [
-            'ngRoute',
+            'ui.router',
             'HaoTv.version',
             'HaoTv.dashboard',
             'HaoTv.login'
         ]);
-    app.config(['$routeProvider', function ($routeProvider) {
-        $routeProvider.otherwise({
-            redirectTo: '/dashboard'
+    app.config(function ($stateProvider, $urlRouterProvider) {
+        $urlRouterProvider.otherwise('/pagenotfound');
+        $stateProvider.state('pagenotfound', {
+            title: 'Page not found'
         });
-    }]);
-    /*
-     * Layout Partials.
-     * By default the partials are loaded through AngularJS ng-include directive. In case they loaded in server side(e.g: PHP include function) then below partial
-     * initialization can be disabled and Layout.init() should be called on page load complete as explained above.
-     */
-    app.controller('HeaderController', ['$scope', function ($scope) {
-        $scope.$on('$includeContentLoaded', function () {
-            //Layout.initHeader(); // init header
-        });
-    }]);
-    app.controller('FooterController', ['$scope', function ($scope) {
-        $scope.$on('$includeContentLoaded', function () {
-            //Layout.initFooter(); // init footer
-        });
-    }]);
-    app.controller('SidebarController', ['$scope', function ($scope) {
-        $scope.$on('$includeContentLoaded', function () {
-            //Layout.initSidebar(); // init sidebar
-        });
-    }]);
+    });
 
     return app;
 });

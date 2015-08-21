@@ -21,8 +21,8 @@ if (window.__karma__) {
 require.config({
     paths: {
         angular: '../bower_components/angular/angular',
-        angularRoute: '../bower_components/angular-route/angular-route',
         angularMocks: '../bower_components/angular-mocks/angular-mocks',
+        angularUiRoute: '../bower_components/angular-ui-router/release/angular-ui-router',
         bootstrap: '../bower_components/bootstrap/dist/js/bootstrap',
         jquery: '../bower_components/jquery/dist/jquery',
         jqueryUi: '../bower_components/jquery-ui/jquery-ui',
@@ -34,11 +34,11 @@ require.config({
         'angular': {
             exports: 'angular'
         },
-        'angularRoute': ['angular'],
         'angularMocks': {
             deps: ['angular'],
             exports: 'angular.mock'
         },
+        'angularUiRoute': ['angular'],
         'bootstrap': {
             deps: ['jqueryUi'],
             exports: 'bootstrap'

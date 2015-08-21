@@ -7,9 +7,9 @@
     "private": false,
     "dependencies": {
         "angular": "1.4.x",
-        "angular-route": "1.4.x",
         "angular-loader": "1.4.x",
         "angular-mocks": "~1.4.x",
+        "angular-ui-router": "0.2.x",
         "bootstrap": "3.3.x",
         "html5-boilerplate": "~4.3.0",
         "jquery": "1.11.x",
