@@ -25,7 +25,7 @@ require.config({
         angularMocks: '../bower_components/angular-mocks/angular-mocks',
         bootstrap: '../bower_components/bootstrap/dist/js/bootstrap',
         jquery: '../bower_components/jquery/dist/jquery',
-        jquery: '../bower_components/jquery-ui/jquery-ui',
+        jqueryUi: '../bower_components/jquery-ui/jquery-ui',
         text: '../bower_components/requirejs-text/text',
         view: '../view'
     },
@@ -39,15 +39,15 @@ require.config({
             exports: 'angular.mock'
         },
         'bootstrap': {
-            deps: ['jquery-ui'],
+            deps: ['jqueryUi'],
             exports: 'bootstrap'
         },
         'jquery': {
             exports: 'jquery'
         },
-        'jquery-ui': {
+        'jqueryUi': {
             deps: ['jquery'],
-            exports: 'jquery-ui'
+            exports: 'jquery.ui'
         }
     },
     priority: ["angular"],
