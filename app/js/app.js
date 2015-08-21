@@ -11,12 +11,22 @@ if (!String.prototype.format) {
 }
 
 define([
+    'parse',
     'angular',
     'angularRoute',
     'components/version/version',
     'view/dashboard/dashboard',
     'view/login/login'
 ], function (angular, angularRoute, dashboardView) {
+
+    Parse.initialize("LOYwfCogZm31uTz2PqLf4Chn4aBTNwBLfdsXWcdz", "KAthIVo7eU6VwPuhGKPZFbCwwxcA2tbY7v649YTn");
+    var TestObject = Parse.Object.extend("TestObject");
+    var testObject = new TestObject();
+    testObject.save({
+        foo: "bar"
+    }).then(function (object) {
+        alert("yay! it worked");
+    });
     /**
      * Declare app level module which depends on views, and components
      * - Steps to add a new page:

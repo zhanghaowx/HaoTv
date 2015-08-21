@@ -26,6 +26,7 @@ require.config({
         bootstrap: '../bower_components/bootstrap/dist/js/bootstrap',
         jquery: '../bower_components/jquery/dist/jquery',
         jqueryUi: '../bower_components/jquery-ui/jquery-ui',
+        parse: 'http://www.parsecdn.com/js/parse-1.5.0.min',
         text: '../bower_components/requirejs-text/text',
         view: '../view'
     },
