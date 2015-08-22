@@ -8,6 +8,7 @@ define([
         .config(function ($stateProvider, $urlRouterProvider) {
             $stateProvider.state('login', {
                 url: '/login',
+                title: 'Login',
                 views: {
                     'content': {
                         templateUrl: 'view/login/login.html',

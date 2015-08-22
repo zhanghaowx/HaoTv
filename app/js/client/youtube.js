@@ -8,7 +8,7 @@ define(["angular",
         // base class constructor
         HaoTv.Client.call(this);
 
-        this.baseUrl = "https://www.googleapis.com/youtube/v3/search";
+        this.baseUrl = "https://www.googleapis.com/youtube/v3";
         this.$http = $http;
     };
 
@@ -17,25 +17,36 @@ define(["angular",
         /**
          * Get a list of videos by channel id
          */
-        getVideo: function (channelId) {
+        getVideo: function (channelId, done) {
             var orderBy = "date";
             var maxResults = 20;
-            var queryUrl = "{0}?key={1}&channelId={2}&part=snippet,id&order={3}&maxResults={4}"
+            var queryUrl = "{0}/search?key={1}&channelId={2}&part=snippet,id&order={3}&maxResults={4}"
                 .format(this.baseUrl, HaoTv.GOOGLE_API_KEY, channelId, orderBy, maxResults);
 
-            return this.$http.get(queryUrl);
-        },
-        /**
-         * Parse HTTP response and return a channel object
-         */
-        parseResponse: function (data) {
-            var channel = new HaoTv.Channel();
-            if (data.items.length > 0) {
-                channel.id = data.items[0].snippet.channelId;
-                channel.videos = data.items;
-            }
+            return this.$http.get(queryUrl).then(function (response) {
+                var channel = new HaoTv.Channel();
+                if (response.data.items.length > 0) {
+                    channel.id = channelId;
+                    channel.videos = response.data.items;
+                }
 
-            return channel;
+                done(channel);
+            });
+        },
+        getChannel: function (channelId, done) {
+            var queryUrl = "{0}/channels?key={1}&id={2}&part=brandingSettings"
+                .format(this.baseUrl, HaoTv.GOOGLE_API_KEY, channelId);
+
+            return this.$http.get(queryUrl).then(function (response) {
+                var channel = new HaoTv.Channel();
+                if (response.data.items.length > 0) {
+                    channel = response.data.items[0].brandingSettings.channel;
+                    channel.id = channelId;
+                    channel.image = response.data.items[0].brandingSettings.image;
+                }
+
+                done(channel);
+            });
         }
     };
 

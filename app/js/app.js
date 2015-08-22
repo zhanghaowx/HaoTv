@@ -16,6 +16,7 @@ define([
     'parse',
     'components/version/version',
     'view/dashboard/dashboard',
+    'view/channel/channel',
     'view/login/login'
 ], function (angular) {
 
@@ -32,6 +33,7 @@ define([
             'ui.router',
             'HaoTv.version',
             'HaoTv.dashboard',
+            'HaoTv.channel',
             'HaoTv.login'
         ]);
     app.config(function ($stateProvider, $urlRouterProvider) {
@@ -40,6 +42,12 @@ define([
             title: 'Page not found'
         });
     });
+    app.run(['$rootScope', '$state', '$stateParams',
+        function ($rootScope, $state, $stateParams) {
+            $rootScope.$state = $state;
+            $rootScope.$stateParams = $stateParams;
+        }
+    ]);
 
     return app;
 });
