@@ -1,4 +1,4 @@
-box: emmenko/nodejs-karma
+box: emmenko/nodejs-karma:v0.1.2
 build:
   steps:
 #    - install-packages:
