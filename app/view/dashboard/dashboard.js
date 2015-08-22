@@ -7,30 +7,11 @@ define([
     angular
         .module('HaoTv.dashboard', ['ui.router'])
         .config(function ($stateProvider, $urlRouterProvider) {
-            $stateProvider.state('dashboard', {
+            $stateProvider.state('main.dashboard', {
                 url: '/dashboard',
                 title: 'Dashboard',
-                views: {
-                    'header': {
-                        templateUrl: 'view/include/header.html'
-                    },
-                    'sidebar': {
-                        templateUrl: 'view/include/sidebar.html',
-                        controller: function ($scope) {
-                            $scope.$on('$viewContentLoaded', function (event) {
-                                Metronic.init(); // init metronic core componets
-                                QuickSidebar.init(); // init quick sidebar
-                            });
-                        }
-                    },
-                    'footer': {
-                        templateUrl: 'view/include/footer.html'
-                    },
-                    'content': {
-                        templateUrl: 'view/dashboard/dashboard.html',
-                        controller: 'DashboardController'
-                    }
-                }
+                templateUrl: 'view/dashboard/dashboard.html',
+                controller: 'DashboardController'
             });
         })
         .controller('DashboardController', ['$scope', '$http',

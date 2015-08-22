@@ -38,9 +38,34 @@ define([
         ]);
     app.config(function ($stateProvider, $urlRouterProvider) {
         $urlRouterProvider.otherwise('/pagenotfound');
-        $stateProvider.state('pagenotfound', {
-            title: 'Page not found'
-        });
+        $stateProvider
+            .state('pagenotfound', {
+                title: 'Page not found'
+            })
+            .state('main', {
+                abstract: true,
+                views: {
+                    'header': {
+                        templateUrl: 'view/include/header.html'
+                    },
+                    'sidebar': {
+                        templateUrl: 'view/include/sidebar.html',
+                        controller: function ($scope) {
+                            $scope.$on('$viewContentLoaded', function (event) {
+                                Metronic.init(); // init metronic core componets
+                                QuickSidebar.init(); // init quick sidebar
+                            });
+                        }
+                    },
+                    'footer': {
+                        templateUrl: 'view/include/footer.html'
+                    },
+                    'content': {
+                        // defers to the child state view
+                        template: '<div ui-view></div>'
+                    }
+                }
+            });
     });
     app.run(['$rootScope', '$state', '$stateParams',
         function ($rootScope, $state, $stateParams) {
