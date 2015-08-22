@@ -1,12 +1,10 @@
 <div class="container-fluid container-lf-space page-content">
     <div ng-model="channels" ng-repeat="channel in channels track by $index">
-        <div class="col-md-6 col-sm-6 col-xs-12 margin-bottom-30">
+        <div class="col-md-12 col-sm-12 margin-bottom-30">
             <!-- BEGIN WIDGET WRAP IMAGE -->
-            <div id="carousel-example-generic-v2" class="carousel slide widget-carousel rounded-3" data-ride="carousel">
-                <div class="widget-wrap-img widget-bg-color-white rounded-3" href="/channel/{{ channel.id }}">
-                    <h3 class="widget-wrap-img-title">{{ channel.title }}</h3>
-                    <img class="widget-wrap-img-element img-responsive" src="{{ channel.image.bannerImageUrl }}" alt="">
-                </div>
+            <div class="widget-wrap-img widget-wrap-img-small widget-bg-color-white" href="/channel/{{ channel.id }}">
+                <h3 class="widget-wrap-img-title"><a ui-sref="channel({id: channel.id})">{{ channel.title }}</a></h3>
+                <img class="widget-wrap-img-element img-responsive" src="{{ channel.image.bannerImageUrl }}" alt="">
             </div>
             <!-- END WIDGET WRAP IMAGE -->
         </div>

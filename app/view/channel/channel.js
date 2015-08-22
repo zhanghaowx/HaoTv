@@ -8,7 +8,7 @@ define([
         .module('HaoTv.channel', ['ui.router'])
         .config(function ($stateProvider, $urlRouterProvider) {
             $stateProvider.state('channel', {
-                url: '/channel/{channelId}',
+                url: '/channel/{id}',
                 title: 'Channel',
                 views: {
                     'header': {
@@ -27,20 +27,28 @@ define([
                 }
             });
         })
-        .controller('ChannelController', ['$scope', '$http',
-            function ($scope, $http) {
-                // initialize
-                $scope.channels = [];
+        .controller('ChannelController', ['$scope', '$stateParams', '$http',
+            function ($scope, $stateParams, $http) {
+                var channelId = $stateParams.id;
 
-                // query Parse to get all channel ids
                 var query = new Parse.Query(Parse.Object.extend("Channel"));
+                query.equalTo("referenceId", channelId);
                 query.find({
                     success: function (results) {
-                        var channelId = channel.get('referenceId');
-                        var youtube = new HaoTv.Youtube($http);
-                        youtube.getChannel(channelId, function (channel) {
-                            $scope.channel = channel;
-                        })
+                        var source = results[0].get("source");
+                        switch (source) {
+                        case "youtube":
+                            {
+                                var youtube = new HaoTv.Youtube($http);
+                                youtube.getVideo(channelId, function (channel) {
+                                    $scope.channel = channel;
+                                });
+                            }
+                            break;
+                        }
+                    },
+                    error: function (object, error) {
+                        console.log(error);
                     }
                 });
         }]);

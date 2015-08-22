@@ -33,6 +33,9 @@ define(["angular",
                 done(channel);
             });
         },
+        /**
+         * Get channel basic information by channel id
+         */
         getChannel: function (channelId, done) {
             var queryUrl = "{0}/channels?key={1}&id={2}&part=brandingSettings"
                 .format(this.baseUrl, HaoTv.GOOGLE_API_KEY, channelId);

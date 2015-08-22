@@ -2,11 +2,9 @@
     <div ng-model="channel" ng-repeat="video in channel.videos track by $index">
         <div class="col-md-3 col-sm-6 col-xs-12 margin-bottom-30">
             <!-- BEGIN WIDGET WRAP IMAGE -->
-            <div id="carousel-example-generic-v2" class="carousel slide widget-carousel rounded-3" data-ride="carousel">
-                <div class="widget-wrap-img widget-bg-color-white rounded-3">
-                    <h3 class="widget-wrap-img-title">{{ video.snippet.title }}</h3>
-                    <img class="widget-wrap-img-element img-responsive" src="{{video.snippet.thumbnails.high.url}}" alt="">
-                </div>
+            <div class="widget-wrap-img widget-wrap-img-small widget-bg-color-white rounded-3">
+                <h5 class="widget-wrap-img-title widget-wrap-img-title-light">{{ video.snippet.title }}</h5>
+                <img class="img-responsive" src="{{video.snippet.thumbnails.medium.url}}" alt="">
             </div>
             <!-- END WIDGET WRAP IMAGE -->
         </div>
