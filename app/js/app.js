@@ -37,12 +37,12 @@ define([
             'HaoTv.login'
         ]);
     app.config(function ($stateProvider, $urlRouterProvider) {
-        $urlRouterProvider.otherwise('/pagenotfound');
+        $urlRouterProvider.otherwise('/404');
         $stateProvider
-            .state('pagenotfound', {
+            .state('404', {
                 title: 'Page not found'
             })
-            .state('main', {
+            .state('home', {
                 abstract: true,
                 views: {
                     'header': {

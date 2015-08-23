@@ -7,7 +7,7 @@ define([
     angular
         .module('HaoTv.dashboard', ['ui.router'])
         .config(function ($stateProvider, $urlRouterProvider) {
-            $stateProvider.state('main.dashboard', {
+            $stateProvider.state('home.dashboard', {
                 url: '/dashboard',
                 title: 'Dashboard',
                 templateUrl: 'view/dashboard/dashboard.html',

@@ -7,24 +7,11 @@ define([
     angular
         .module('HaoTv.channel', ['ui.router'])
         .config(function ($stateProvider, $urlRouterProvider) {
-            $stateProvider.state('channel', {
+            $stateProvider.state('home.channel', {
                 url: '/channel/{id}',
                 title: 'Channel',
-                views: {
-                    'header': {
-                        templateUrl: 'view/include/header.html',
-                    },
-                    'sidebar': {
-                        templateUrl: 'view/include/sidebar.html',
-                    },
-                    'footer': {
-                        templateUrl: 'view/include/footer.html',
-                    },
-                    'content': {
-                        templateUrl: 'view/channel/channel.html',
-                        controller: 'ChannelController'
-                    }
-                }
+                templateUrl: 'view/channel/channel.html',
+                controller: 'ChannelController'
             });
         })
         .controller('ChannelController', ['$scope', '$stateParams', '$http',
