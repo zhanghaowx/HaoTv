@@ -14,6 +14,7 @@ define([
     'angular',
     'angularUiRoute',
     'parse',
+    'oclazyload',
     'components/version/version',
     'view/dashboard/dashboard',
     'view/channel/channel',
@@ -31,11 +32,21 @@ define([
      */
     var app = angular.module('HaoTv', [
             'ui.router',
+            'oc.lazyLoad',
             'HaoTv.version',
             'HaoTv.dashboard',
             'HaoTv.channel',
             'HaoTv.login'
         ]);
+
+    /* Configure ocLazyLoader(refer: https://github.com/ocombe/ocLazyLoad) */
+    app.config(['$ocLazyLoadProvider', function ($ocLazyLoadProvider) {
+        $ocLazyLoadProvider.config({
+            cssFilesInsertBefore: 'ng_load_plugins_before' // load the above css files before a LINK element with this ID. Dynamic CSS files must be loaded between core and theme css files
+        });
+    }]);
+
+    /* Setup Rounting For Core Pages */
     app.config(function ($stateProvider, $urlRouterProvider) {
         $urlRouterProvider.otherwise('/404');
         $stateProvider
@@ -67,6 +78,7 @@ define([
                 }
             });
     });
+
     app.run(['$rootScope', '$state', '$stateParams',
         function ($rootScope, $state, $stateParams) {
             $rootScope.$state = $state;

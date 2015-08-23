@@ -1,20 +1,26 @@
 {
-    "name": "HaoTv",
-    "description": "A webapp for collection online video resources.",
-    "version": "0.3.0",
-    "homepage": "https://github.com/zhanghaowx/HaoTv",
-    "license": "MIT",
-    "private": false,
-    "dependencies": {
-        "angular": "1.4.x",
-        "angular-loader": "1.4.x",
-        "angular-mocks": "~1.4.x",
-        "angular-ui-router": "0.2.x",
-        "bootstrap": "3.3.x",
-        "html5-boilerplate": "~4.3.0",
-        "jquery": "1.11.x",
-        "jquery-ui": "1.11.x",
-        "requirejs-text": "2.0.x",
-        "requirejs": "2.1.x"
-    }
+  "name": "HaoTv",
+  "description": "A webapp for collection online video resources.",
+  "version": "0.3.0",
+  "homepage": "https://github.com/zhanghaowx/HaoTv",
+  "license": "MIT",
+  "private": false,
+  "dependencies": {
+    "angular": "~1.4.x",
+    "angular-loader": "~1.4.x",
+    "angular-ui-router": "0.2.x",
+    "bootstrap": "3.3.x",
+    "html5-boilerplate": "~4.3.0",
+    "jquery": "1.11.x",
+    "jquery-ui": "1.11.x",
+    "oclazyload": "1.0.x",
+    "requirejs-text": "2.0.x",
+    "requirejs": "2.1.x"
+  },
+  "devDependencies": {
+    "angular-mocks": "~1.4.x"
+  },
+  "resolutions": {
+    "angular": "1.4.4"
+  }
 }

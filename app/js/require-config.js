@@ -26,6 +26,7 @@ require.config({
         bootstrap: '../bower_components/bootstrap/dist/js/bootstrap',
         jquery: '../bower_components/jquery/dist/jquery',
         jqueryUi: '../bower_components/jquery-ui/jquery-ui',
+        oclazyload: '../bower_components/oclazyload/dist/ocLazyLoad',
         parse: 'http://www.parsecdn.com/js/parse-1.5.0.min',
         text: '../bower_components/requirejs-text/text',
         view: '../view'
@@ -35,20 +36,26 @@ require.config({
             exports: 'angular'
         },
         'angularMocks': {
-            deps: ['angular'],
-            exports: 'angular.mock'
+            exports: 'angular.mock',
+            deps: ['angular']
         },
-        'angularUiRoute': ['angular'],
+        'angularUiRoute': {
+            exports: 'angular.mock',
+            deps: ['angular']
+        },
         'bootstrap': {
-            deps: ['jqueryUi'],
-            exports: 'bootstrap'
+            exports: 'bootstrap',
+            deps: ['jqueryUi']
         },
         'jquery': {
             exports: 'jquery'
         },
         'jqueryUi': {
-            deps: ['jquery'],
-            exports: 'jquery.ui'
+            exports: 'jquery.ui',
+            deps: ['jquery']
+        },
+        'oclazyload': {
+            deps: ['angular']
         }
     },
     priority: ["angular"],
