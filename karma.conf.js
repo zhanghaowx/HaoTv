@@ -18,6 +18,10 @@ module.exports = function (config) {
                 included: false
             },
             {
+                pattern: 'app/bower_components/oclazyload/dist/ocLazyLoad.js',
+                included: false
+            },
+            {
                 pattern: 'app/js/components/**/*.js',
                 included: false
             },

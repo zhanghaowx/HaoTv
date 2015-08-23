@@ -40,7 +40,7 @@ require.config({
             deps: ['angular']
         },
         'angularUiRouter': {
-            exports: 'angular.mock',
+            exports: 'angular.uiRouter',
             deps: ['angular']
         },
         'bootstrap': {
