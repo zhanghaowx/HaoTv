@@ -22,7 +22,7 @@ require.config({
     paths: {
         angular: '../bower_components/angular/angular',
         angularMocks: '../bower_components/angular-mocks/angular-mocks',
-        angularUiRoute: '../bower_components/angular-ui-router/release/angular-ui-router',
+        angularUiRouter: '../bower_components/angular-ui-router/release/angular-ui-router',
         bootstrap: '../bower_components/bootstrap/dist/js/bootstrap',
         jquery: '../bower_components/jquery/dist/jquery',
         jqueryUi: '../bower_components/jquery-ui/jquery-ui',
@@ -39,7 +39,7 @@ require.config({
             exports: 'angular.mock',
             deps: ['angular']
         },
-        'angularUiRoute': {
+        'angularUiRouter': {
             exports: 'angular.mock',
             deps: ['angular']
         },

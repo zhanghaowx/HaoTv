@@ -1,9 +1,9 @@
 'use strict';
 define([
     'angular',
-    'angularUiRoute',
+    'angularUiRouter',
     'client/youtube'
-], function (angular, angularUiRoute, HaoTv) {
+], function (angular, angularUiRouter, HaoTv) {
     angular
         .module('HaoTv.dashboard', ['ui.router'])
         .config(function ($stateProvider, $urlRouterProvider) {

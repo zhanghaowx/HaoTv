@@ -1,7 +1,7 @@
 'use strict';
 define([
     'angular',
-    'angularUiRoute'
+    'angularUiRouter'
 ], function (angular) {
     angular
         .module('HaoTv.login', ['ui.router'])

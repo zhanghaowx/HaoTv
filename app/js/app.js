@@ -12,7 +12,7 @@ if (!String.prototype.format) {
 
 define([
     'angular',
-    'angularUiRoute',
+    'angularUiRouter',
     'parse',
     'oclazyload',
     'components/version/version',
