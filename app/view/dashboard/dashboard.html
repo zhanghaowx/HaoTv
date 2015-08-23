@@ -4,7 +4,7 @@
             <!-- BEGIN WIDGET WRAP IMAGE -->
             <div class="widget-wrap-img widget-wrap-img-small widget-bg-color-white" href="/channel/{{ channel.id }}">
                 <h3 class="widget-wrap-img-title"><a ui-sref="home.channel({id: channel.id})">{{ channel.title }}</a></h3>
-                <img class="widget-wrap-img-element img-responsive" src="{{ channel.image.bannerImageUrl }}" alt="">
+                <img class="widget-wrap-img-element img-responsive" ng-src="{{channel.image.bannerImageUrl}}" alt="Banner">
             </div>
             <!-- END WIDGET WRAP IMAGE -->
         </div>

@@ -9,7 +9,9 @@ define(['app', 'angularMocks'], function (app) {
             it('should exist', inject(function ($controller) {
                 //spec body
                 var DashboardController = $controller('DashboardController', {
-                    $scope: {}
+                    $scope: {
+                        $on: function () {}
+                    }
                 });
                 expect(DashboardController).toBeDefined();
             }));

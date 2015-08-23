@@ -22,7 +22,6 @@ define([
                     Metronic.init(); // init metronic core componets
                     Layout.init(); // init layout
                 });
-
                 // query Parse to get all channel ids
                 var query = new Parse.Query(Parse.Object.extend("Channel"));
                 query.find({

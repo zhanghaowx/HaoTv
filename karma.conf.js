@@ -10,11 +10,11 @@ module.exports = function (config) {
                 included: false
             },
             {
-                pattern: 'app/bower_components/angular-route/angular-route.js',
+                pattern: 'app/bower_components/angular-mocks/angular-mocks.js',
                 included: false
             },
             {
-                pattern: 'app/bower_components/angular-mocks/angular-mocks.js',
+                pattern: 'app/bower_components/angular-ui-router/release/angular-ui-router.js',
                 included: false
             },
             {
