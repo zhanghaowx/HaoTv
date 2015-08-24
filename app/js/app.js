@@ -48,7 +48,7 @@ define([
 
     /* Setup Rounting For Core Pages */
     app.config(function ($stateProvider, $urlRouterProvider) {
-        $urlRouterProvider.otherwise('/404');
+        $urlRouterProvider.otherwise('/dashboard');
         $stateProvider
             .state('404', {
                 title: 'Page not found'
