@@ -13,25 +13,23 @@
     height: 100%;
 }
 
-.widget-wrap-img {
-    padding: 0;
-    min-height: 200px;
+.widget-gradient-small {
+    min-height: 150px;
 }
 
-.widget-wrap-img .widget-wrap-img-title {
-    margin: 0px;
+.widget-gradient.widget-gradient-img-v1 {
+    background-position: left top;
 }
 
-.widget-wrap-img .widget-wrap-img-element {
-    position: relative;
-}
-
-.widget-wrap-img .widget-wrap-img-title {
-    min-height: 0px;
-    padding: 20px;
-}
-
-.widget-wrap-img .widget-wrap-img-title.widget-wrap-img-title-light {
-    font-size: 13px;
+.widget-gradient .widget-gradient-body .widget-gradient-title-light {
+    font-size: 15px;
     font-weight: normal;
+}
+
+.widget-gradient .widget-gradient-title a {
+    color: white;
+}
+
+.widget-gradient .widget-gradient-title a:hover {
+    text-decoration: none;
 }

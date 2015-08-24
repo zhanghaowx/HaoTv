@@ -1,12 +1,58 @@
 <div class="container-fluid container-lf-space page-content">
     <div ng-model="channels" ng-repeat="channel in channels track by $index">
-        <div class="col-md-12 col-sm-12 margin-bottom-30">
-            <!-- BEGIN WIDGET WRAP IMAGE -->
-            <div class="widget-wrap-img widget-wrap-img-small widget-bg-color-white" href="/channel/{{ channel.id }}">
-                <h3 class="widget-wrap-img-title"><a ui-sref="home.channel({id: channel.id})">{{ channel.title }}</a></h3>
-                <img class="widget-wrap-img-element img-responsive" ng-src="{{channel.image.bannerImageUrl}}" alt="Banner">
+        <div class="col-md-3 col-sm-6 col-xs-12 margin-bottom-30">
+            <!-- BEGIN WIDGET GRADIENT -->
+            <div class="clearfix"></div>
+            <div id="carousel-channel-{{$index}}" class="carousel slide widget-carousel rounded-3" data-ride="carousel">
+                <!-- Indicators -->
+                <ol class="carousel-indicators">
+                    <li data-target="#carousel-channel-{{$index}}" data-slide-to="0" class="circle"></li>
+                    <li data-target="#carousel-channel-{{$index}}" data-slide-to="1" class="circle active"></li>
+                </ol>
+
+                <!-- Wrapper for slides -->
+                <div class="carousel-inner" role="listbox">
+                    <div class="item">
+                        <div class="widget-gradient widget-gradient-img-v1 rounded-3" style="{{channel.image ? 'background-image: url({0})'.format(channel.image) : ''}}">
+                            <div class="widget-gradient-body">
+                                <h3 class="widget-gradient-title"><a ui-sref="home.channel({id: channel.id})">{{ channel.title }}</a></h3>
+                                <ul class="widget-gradient-body-actions list-inline">
+                                    <li>
+                                        <a href="#">
+                                            <i class="fa fa-heart"></i> 0
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fa fa-comment"></i> 0
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item active">
+                        <div class="widget-gradient widget-gradient-img-v1 rounded-3" style="{{channel.image ? 'background-image: url({0})'.format(channel.image) : ''}}">
+                            <div class="widget-gradient-body">
+                                <h3 class="widget-gradient-title"><a ui-sref="home.channel({id: channel.id})">{{ channel.title }}</a></h3>
+                                <ul class="widget-gradient-body-actions list-inline">
+                                    <li>
+                                        <a href="#">
+                                            <i class="fa fa-heart"></i> 0
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fa fa-comment"></i> 0
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <!-- END WIDGET WRAP IMAGE -->
+            <!-- END WIDGET GRADIENT -->
         </div>
     </div>
 </div>

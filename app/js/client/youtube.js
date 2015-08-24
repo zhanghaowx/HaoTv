@@ -30,6 +30,7 @@ define(["angular",
                     channel.videos = response.data.items;
                 }
 
+                console.log(channel);
                 done(channel);
             });
         },
@@ -45,7 +46,12 @@ define(["angular",
                 if (response.data.items.length > 0) {
                     channel = response.data.items[0].brandingSettings.channel;
                     channel.id = channelId;
-                    channel.image = response.data.items[0].brandingSettings.image;
+                    channel.image = response.data.items[0].brandingSettings.image.bannerImageUrl;
+
+                    if (channel.image.indexOf("default_banner") >= 0) {
+                        channel.image = null;
+                    }
+
                 }
 
                 done(channel);
