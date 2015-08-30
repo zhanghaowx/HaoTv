@@ -26,8 +26,6 @@ build:
           npm run test-single-run
 deploy:
   steps:
-    - install-packages:
-        packages: ssh
     - mktemp:
         envvar: PRIVATEKEY_PATH
     - create-file:
