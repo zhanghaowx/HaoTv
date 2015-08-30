@@ -1,4 +1,4 @@
-define(["video/video"], function (HaoTv) {
+define(["video/video"], function () {
     /**
      * A channel is a collection of videos
      */

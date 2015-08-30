@@ -1,6 +1,6 @@
 define(["angular",
         "client/client",
-        "video/channel"], function (angular, HaoTv) {
+        "video/channel"], function (angular) {
     /**
      * Youtube clients which get video resources from Google's Youtube
      */

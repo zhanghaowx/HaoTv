@@ -1,4 +1,4 @@
-define(["core/core"], function (HaoTv) {
+define(["core/core"], function () {
     /**
      * Interface of clients that collects online resources
      */

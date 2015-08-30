@@ -3,7 +3,7 @@ define([
     'angular',
     'angularUiRouter',
     'client/youtube'
-], function (angular, angularUiRouter, HaoTv) {
+], function (angular) {
     angular
         .module('HaoTv.dashboard', ['ui.router'])
         .config(function ($stateProvider, $urlRouterProvider) {
