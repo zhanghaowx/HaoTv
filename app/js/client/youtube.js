@@ -30,7 +30,6 @@ define(["angular",
                     channel.videos = response.data.items;
                 }
 
-                console.log(channel);
                 done(channel);
             });
         },

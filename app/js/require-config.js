@@ -66,7 +66,8 @@ require.config({
 
 require([
     'angular',
-    'app'
+    'app',
+    'directives'
 ], function (angular, app) {
     var $html = angular.element(document.getElementsByTagName('html')[0]);
     angular.element().ready(function () {

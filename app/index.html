@@ -45,15 +45,21 @@
 <!-- BEGIN BODY -->
 
 <body class="page-header-fixed page-quick-sidebar-over-content">
+    <!-- BEGIN PAGE SPINNER -->
+    <div ng-spinner-bar class="page-spinner-bar">
+        <div class="bounce1"></div>
+        <div class="bounce2"></div>
+        <div class="bounce3"></div>
+    </div>
+    <!-- END PAGE SPINNER -->
+
     <!-- BEGIN HEADER -->
     <div ui-view="header"></div>
     <!-- END HEADER -->
 
-    <!-- BEGIN CLEARFIX -->
     <div class="clearfix"></div>
-    <!-- END CLEARFIX -->
 
-    <!-- BEGIN CONTAINER -->
+    <!-- BEGIN PAGE CONTENT CONTAINER -->
     <div class="page-container page-container-bg-solid">
         <div ui-view="content"></div>
 
@@ -72,7 +78,8 @@
         <div ui-view="sidebar" class="page-quick-sidebar-wrapper"></div>
         <!-- END QUICK SIDEBAR -->
     </div>
-    <!-- END CONTAINER -->
+    <!-- END PAGE CONTENT CONTAINER -->
+
     <!-- BEGIN FOOTER -->
     <div ui-view="footer" class="page-footer"></div>
     <!-- END FOOTER -->

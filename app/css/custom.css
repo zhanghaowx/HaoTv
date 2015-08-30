@@ -33,3 +33,13 @@
 .widget-gradient .widget-gradient-title a:hover {
     text-decoration: none;
 }
+
+
+/*
+ * CSS3 Spinner Bar
+ */
+
+.page-spinner-bar > div,
+.block-spinner-bar > div {
+    background: #6fa7d7;
+}
