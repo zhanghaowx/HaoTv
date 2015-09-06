@@ -19,7 +19,7 @@ define(["angular",
          */
         getVideo: function (channelId, done) {
             var orderBy = "date";
-            var maxResults = 20;
+            var maxResults = 50;
             var queryUrl = "{0}/search?key={1}&channelId={2}&part=snippet,id&order={3}&maxResults={4}"
                 .format(this.baseUrl, HaoTv.GOOGLE_API_KEY, channelId, orderBy, maxResults);
 

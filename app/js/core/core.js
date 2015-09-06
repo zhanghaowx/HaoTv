@@ -1,3 +1,7 @@
+/**
+ * AngularJs best practice: create a service and load with $http a JSON file
+ */
+
 // namespace
 HaoTv = {}
 
