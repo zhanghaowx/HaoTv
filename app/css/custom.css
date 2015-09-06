@@ -13,8 +13,32 @@
     height: 100%;
 }
 
+.channel {
+    padding: 20px;
+    background-color: white;
+}
+
 .widget-gradient-small {
     min-height: 150px;
+}
+
+.widget-gradient-small .widget-gradient-body h5.widget-gradient-title {
+    font-size: 10px;
+    font-weight: lighter;
+    background-color: red;
+    position: absolute;
+    padding: 2px;
+    top: 0;
+    left: 0;
+}
+
+.widget-gradient-bottom {
+    position: absolute;
+    bottom: 0;
+}
+
+.widget-gradient-bottom .widget-gradient-body-actions li a {
+    color: #AAA;
 }
 
 .widget-gradient.widget-gradient-img-v1 {

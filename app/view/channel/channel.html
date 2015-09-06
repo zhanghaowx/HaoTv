@@ -1,27 +1,38 @@
 <div class="container-fluid container-lf-space page-content fade-in-up">
     <div ng-model="channel" ng-repeat="video in channel.videos track by $index">
-        <div class="col-md-2 col-sm-3 col-xs-6 margin-bottom-30">
-            <!-- BEGIN WIDGET WRAP IMAGE -->
-            <div class="clearfix"></div>
-            <div class="widget-gradient widget-gradient-small widget-gradient-img-v1 rounded-3" style="background-image: url({{video.snippet.thumbnails.medium.url}})">
-                <div class="widget-gradient-body">
-                    <h3 class="widget-gradient-title widget-gradient-title-light">
-                        <a ng-href="https://www.youtube.com/watch?v={{video.id.videoId}}">{{video.snippet.title}}</a></h3>
-                    <ul class="widget-gradient-body-actions list-inline">
-                        <li>
-                            <a href="#">
-                                <i class="fa fa-heart"></i> 0
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <i class="fa fa-comment"></i> 0
-                            </a>
-                        </li>
-                    </ul>
+        <div class="channel row margin-bottom-30">
+            <div class="col-md-2 col-sm-3 col-xs-6">
+                <!-- BEGIN WIDGET WRAP IMAGE -->
+                <div class="clearfix"></div>
+                <div class="widget-gradient widget-gradient-small widget-gradient-img-v1 rounded-3" style="background-image: url({{video.snippet.thumbnails.medium.url}})">
+                    <div class="widget-gradient-body">
+                        <h5 class="widget-gradient-title">{{ video.title }}</h5>
+                    </div>
+                </div>
+                <!-- END WIDGET WRAP IMAGE -->
+            </div>
+            <div class="col-md-10 col-sm-9 col-xs-6">
+                <div class="clearfix"></div>
+                <div class="widget-gradient-small">
+                    <div class="row">
+                        <h4><a ng-href="https://www.youtube.com/watch?v={{video.id.videoId}}">{{video.snippet.title}}</a></h4>
+                    </div>
+                    <div class="row widget-gradient-bottom">
+                        <ul class="widget-gradient-body-actions list-inline">
+                            <li>
+                                <a href="#">
+                                    <i class="fa fa-heart"></i> 0
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="fa fa-comment"></i> 0
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
-            <!-- END WIDGET WRAP IMAGE -->
         </div>
     </div>
 </div>

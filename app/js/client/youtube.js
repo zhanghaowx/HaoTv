@@ -1,4 +1,5 @@
 define(["angular",
+        "algorithm/name",
         "client/client",
         "video/channel"], function (angular) {
     /**
@@ -28,6 +29,11 @@ define(["angular",
                 if (response.data.items.length > 0) {
                     channel.id = channelId;
                     channel.videos = response.data.items;
+
+                    for (var i in channel.videos) {
+                        var video = channel.videos[i];
+                        video.title = HaoTv.parseName(video.snippet.title).seriesTitle;
+                    }
                 }
 
                 done(channel);
@@ -47,10 +53,10 @@ define(["angular",
                     channel.id = channelId;
                     channel.image = response.data.items[0].brandingSettings.image.bannerImageUrl;
 
+                    // replace default banner with our own image
                     if (channel.image.indexOf("default_banner") >= 0) {
                         channel.image = null;
                     }
-
                 }
 
                 done(channel);
